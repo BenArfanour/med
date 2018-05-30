@@ -1,0 +1,97 @@
+<?php
+
+namespace NewsBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * News_ADMIN
+ *
+ * @ORM\Table(name="news__a_d_m_i_n")
+ * @ORM\Entity(repositoryClass="NewsBundle\Repository\News_ADMINRepository")
+ */
+class News_ADMIN
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+
+    /**
+     * @ORM\ManyToOne(targetEntity="NewsBundle\Entity\news" , inversedBy="news",cascade={"remove", "persist"})
+     * @ORM\JoinColumn(name="id_news",referencedColumnName="id")
+     */
+
+
+    private $news;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AuthentificationBundle\Entity\user" ,inversedBy="news",cascade={"remove", "persist"})
+     * @ORM\JoinColumn(name="id_user",referencedColumnName="id")
+     */
+    private $admins;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set news
+     *
+     * @param \NewsBundle\Entity\news $news
+     *
+     * @return News_ADMIN
+     */
+    public function setNews(\NewsBundle\Entity\news $news = null)
+    {
+        $this->news = $news;
+
+        return $this;
+    }
+
+    /**
+     * Get news
+     *
+     * @return \NewsBundle\Entity\news
+     */
+    public function getNews()
+    {
+        return $this->news;
+    }
+
+    /**
+     * Set admins
+     *
+     * @param \AuthentificationBundle\Entity\user $admins
+     *
+     * @return News_ADMIN
+     */
+    public function setAdmins(\AuthentificationBundle\Entity\user $admins = null)
+    {
+        $this->admins = $admins;
+
+        return $this;
+    }
+
+    /**
+     * Get admins
+     *
+     * @return \AuthentificationBundle\Entity\user
+     */
+    public function getAdmins()
+    {
+        return $this->admins;
+    }
+}

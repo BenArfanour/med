@@ -1,0 +1,34 @@
+
+{% extends 'DhashbordPnc.html.twig' %}
+
+
+
+{% block erreur %}
+
+    <script type="text/javascript">
+        $( document ).ready(function() {
+            $('#myModal').modal('toggle');
+        });
+    </script>
+
+    <link rel="stylesheet" href={{ asset('assets/bootstrap/css/bootstrap.min.css') }} />
+
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel"><font color="red"><strong>Ouups une erreur s'est Produit</strong></font></h4>
+                </div>
+                <div class="modal-body">
+                    <b>Vous pouvez choisir juste un rammassage juste</b> <strong>AVANT  2H</strong> <b> de votre vol</b>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

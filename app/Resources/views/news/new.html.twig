@@ -1,0 +1,22 @@
+
+{% extends 'ba.html.twig' %}
+
+{% form_theme form 'bootstrap_3_layout.html.twig' %}
+
+{% block div %}
+    <link rel="stylesheet" href="{{asset('News/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{asset('News/plugins/datepicker/datepicker3.css') }}">
+    <script src="{{ asset('News/plugins/datepicker/bootstrap-datepicker.js') }}"></script>
+
+    {{ form_start(form, {'action': path('news_ajout'), 'method': 'POST'}) }}
+    {{ form_widget(form)}}
+{% endblock %}
+{% block test2 %}
+    <br>
+
+    <div>
+        <input type="submit" class="btn btn-success btn-block" value="Ajouter" >
+    </div>
+{% endblock test2 %}
+
+

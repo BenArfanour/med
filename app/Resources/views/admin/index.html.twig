@@ -1,0 +1,36 @@
+{% extends 'basup.html.twig' %}
+
+{% block div %}
+
+    <table  width="60%"  align="center" class="table table-striped">
+
+        <tr>
+            <thead align="center">
+            <th> Numéro </th>
+            <th> Username </th>
+            <th> Nom </th>
+            <th> Prenom </th>
+            <th> Email </th>
+            <th> Action </th>
+            </thead>
+        </tr>
+        <tr>
+            {% for c in admins%}
+            {% if (c.hasRole('ROLE_ADMIN'))%}
+            <td> {{ c.id }}</td>
+            <td> {{ c.username|upper }}</td>
+            <td> {{ c.nom }}</td>
+            <td> {{ c.prenom }}</td>
+            <td> {{ c.email}}</td>
+            <td >
+
+                <a href="{{ path('edit_admin', { 'id': c.id }) }}"> <i class="glyphicon glyphicon-edit"  title="Modifier"></i></a>
+                <a href="{{ path('delete_admin',{'id':c.id}) }}}}"><i class="glyphicon glyphicon-remove" title="Supprimer"></i></a>
+
+            </td>
+
+        </tr>
+             {% endif %}
+             {% endfor %}
+    </table>
+{% endblock div %}

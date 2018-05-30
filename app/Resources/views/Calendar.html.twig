@@ -1,0 +1,47 @@
+
+<script
+        src="https://code.jquery.com/jquery-1.9.1.js"
+        integrity="sha256-e9gNBsAcA0DBuRWbm0oZfbiCyhjLrI6bmqAl5o+ZjUA="
+        crossorigin="anonymous"></script>
+    <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+    <script src="{{ path('fos_js_routing_js', {'callback': 'fos.Router.setData'}) }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/fullcalendar/js/moment.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/fullcalendar/js/fullcalendar.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/init.fullCalendar.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/bootstrap/js/bootstrap.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/locale/fr.js') }}"></script>
+
+
+    {{ fullCalendar() }}
+
+    <div id="fullCalModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span> <span class="sr-only">close</span></button>
+                    <h4 id="modalTitle" class="modal-title"></h4>
+                </div>
+                <div id="modalBody" class="modal-body"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <a id="eventUrl" class="btn btn-danger" >Rammassage</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <style>
+
+    .fc-widget-header{
+        background-color:#45b2ea;
+
+    }
+    .fc-widget-content{
+            background-color:#DFF2FF;
+        }
+</style>
+    <link rel="stylesheet" href="{{ asset('bundles/fullcalendar/css/fullcalendar.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap-theme.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/fullcalendar/css/fullcalendar.print.css') }}" media="print" />

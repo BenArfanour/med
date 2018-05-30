@@ -1,0 +1,55 @@
+
+
+news_ajout:
+    path:     /ajout
+    defaults: { _controller: NewsBundle:news:new}
+
+news_Modif:
+    path:     /modifnews/{id}
+    defaults: { _controller: NewsBundle:news:edit}
+
+news_Sup:
+    path:     /supnews/{id}
+    defaults: { _controller: NewsBundle:news:delete}
+
+news_affiche:
+    path:     /affiche
+    defaults: { _controller: NewsBundle:news:index }
+
+
+newss_ajout:
+    path:     /ajoutt
+    defaults: { _controller: NewsBundle:news:neww}
+
+newss_Modif:
+    path:     /modifnewss/{id}
+    defaults: { _controller: NewsBundle:news:editt}
+
+newss_Sup:
+    path:     /supnewss/{id}
+    defaults: { _controller: NewsBundle:news:deletee}
+
+newss_affiche:
+    path:     /affichee
+    defaults: { _controller: NewsBundle:news:indexx }
+
+get_News:
+    path:    /newspopup
+    defaults: { _controller: NewsBundle:news:getNews}
+
+
+
+pnc:
+   path:   /popup
+   defaults: { _controller: NewsBundle:news:pnc }
+
+home:
+   path:    /home
+   defaults: {_controller: NewsBundle:news:home}
+
+
+
+
+low:
+    path:    /low/{id}
+    defaults: {_controller:NewsBundle:news:low}

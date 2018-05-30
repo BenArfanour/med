@@ -1,0 +1,16 @@
+{% extends 'basup.html.twig' %}
+
+{% form_theme form 'form_div_layout.html.twig' %}
+
+{% block div %}
+
+    {{ form_start(form,{'attr': {'id': 'noteservicee_ediit'}} ,{'action': path('noteservicee_ediit'), 'method': 'POST'}) }}
+    {{form_widget(form)}}
+
+{% endblock %}
+{% block test2 %}
+    <br><div >
+    <input type="submit" class="btn btn-success btn-block" value="Modifer" >
+</div>
+{% endblock test2 %}
+

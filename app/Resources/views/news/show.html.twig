@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>News</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ news.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ news.titre }}</td>
+            </tr>
+            <tr>
+                <th>Corps</th>
+                <td>{{ news.corps }}</td>
+            </tr>
+            <tr>
+                <th>Datedebut</th>
+                <td>{% if news.dateDebut %}{{ news.dateDebut|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Datefin</th>
+                <td>{% if news.dateFin %}{{ news.dateFin|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Pj</th>
+                <td>{{ news.pj }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ news.type }}</td>
+            </tr>
+            <tr>
+                <th>Typepnc</th>
+                <td>{{ news.typePnc }}</td>
+            </tr>
+            <tr>
+                <th>Lu</th>
+                <td>{{ news.lu }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('news_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('news_edit', { 'id': news.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

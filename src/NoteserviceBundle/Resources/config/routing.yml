@@ -1,0 +1,42 @@
+noteservice_homepage:
+    path:     /showns
+    defaults: { _controller: NoteserviceBundle:Notesrv:show }
+
+
+noteservice_add:
+    path:     /addns
+    defaults: { _controller: NoteserviceBundle:Notesrv:new}
+
+
+noteservice_show:
+    path:     /addans
+    defaults: { _controller: NoteserviceBundle:Notesrv:show}
+
+
+noteservice_supp:
+    path:     /supns/{id}
+    defaults: { _controller: NoteserviceBundle:Notesrv:delete}
+
+
+noteservice_ediit:
+    path:     /editns/{id}
+    defaults: { _controller: NoteserviceBundle:Notesrv:edit}
+
+
+
+noteservicee_add:
+    path:     /addddns
+    defaults: { _controller: NoteserviceBundle:Notesrv:neww}
+
+
+noteservicee_supp:
+    path:     /supnns/{id}
+    defaults: { _controller: NoteserviceBundle:Notesrv:deletee}
+
+noteservicee_ediit:
+    path:     /editnns/{id}
+    defaults: { _controller: NoteserviceBundle:Notesrv:editt}
+
+noteservicee_show:
+    path:     /adfdns
+    defaults: { _controller: NoteserviceBundle:Notesrv:showw}

@@ -1,0 +1,12 @@
+rammassage_homepage:
+    path:     /
+    defaults: { _controller: RammassageBundle:Default:index }
+
+add_rammasage:
+    path:    /demande
+    defaults: {_controller: RammassageBundle:rammassage:new}
+
+
+error:
+    path:   /error
+    defaults: {_controller: RammassageBundle:rammassage:error}

@@ -1,0 +1,16 @@
+
+{% extends 'ba.html.twig' %}
+
+{% form_theme form 'form_div_layout.html.twig' %}
+
+{% block test %}
+
+    {{ form_start(form, {'action': path('noteservice_add'), 'method': 'POST'}) }}
+    {{ form_widget(form)}}
+{% endblock test %}
+{% block test2 %}
+    <br><div >
+    <input type="submit" class="btn btn-success btn-block" value="Ajouter" >
+</div>
+{% endblock test2 %}
+

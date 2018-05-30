@@ -1,0 +1,29 @@
+{% extends 'basup.html.twig' %}
+
+{% block div %}
+
+    <table  width="60%"  align="center" class="table table-striped">
+        <tr>
+            <thead align="center">
+            <th> Numéro </th>
+            <th> titre</th>
+            <th> File (PDF) </th>
+            <th> Action </th>
+            </thead>
+        </tr>
+        <tr>
+            {% for c in notesrv %}
+
+            <td> {{ c.id}}</td>
+            <td> {{ c.titre}}</td>
+            <td> <a href="{{ asset('uploads/Noteservice' ~ c.upload) }}"> {{ c.upload }}</a></td>
+            <td >
+                <a href="{{ path('noteservicee_ediit', { 'id': c.id }) }}"> <i class="glyphicon glyphicon-edit"  title="Modifier"></i></a>
+                <a href="{{ path('noteservicee_supp',{'id':c.id}) }}}}"><i class="glyphicon glyphicon-remove" title="Supprimer"></i></a>
+
+            </td>
+
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock div %}

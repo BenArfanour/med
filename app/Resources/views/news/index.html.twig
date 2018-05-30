@@ -1,0 +1,39 @@
+{% extends 'ba.html.twig' %}
+{% block div %}
+    <table  width="60%"  align="center" class="table table-striped">
+
+        <tr>
+            <thead align="center">
+            <th> Numéro </th>
+            <th> Titre </th>
+            <th> Corps </th>
+            <th> date debut </th>
+            <th> date Fin </th>
+            <th> piéce jointe</th>
+            <th> Type</th>
+            <th> Type PNC</th>
+            <th> Action&nbsp;&nbsp;</th>
+            </thead>
+        </tr>
+        <tr>
+            {% for c in news %}
+            <td> {{ c.id}} </td>
+            <td> {{ c.titre|upper }} </td>
+            <td> {{ c.corps }} </td>
+            <td> {{ c.datedebut|date('d/m/y')}} </td>
+            <td> {{ c.datefin|date("d/m/y") }} </td>
+            <td> <a href="{{ asset('uploads/news/' ~ c.pj) }}">{{ c.pj}}</a></td>
+            <td> {{c.type }}</td>
+            <td> {{ c.typepnc}}</td>
+            <td>
+
+                <a href="{{ path('news_Modif',{'id':c.id}) }}"> <i class="glyphicon glyphicon-edit"  title="Modifier"></i></a>
+                <a href="{{ path('news_Sup',{'id':c.id}) }}"><i class="glyphicon glyphicon-remove" title="Supprimer"></i></a>
+
+            </td>
+
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
+

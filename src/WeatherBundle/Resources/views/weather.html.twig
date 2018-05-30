@@ -1,0 +1,54 @@
+{% extends '::DhashbordPnc.html.twig' %}
+{% block weather %}
+<!Doctype html>
+<html>
+<head>
+    <title>Weather</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/Weather/cssmeteo/style.css') }}">
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js" ></script>
+    <script src="{{ asset('assets/Weather/jsmeteo/script.js') }}" ></script>
+    <link rel="stylesheet" href="{{asset('News/bootstrap/css/bootstrap.min.css') }}">
+
+
+
+</head>
+<body>
+
+
+
+<br><br> <br>
+
+<div class="row">
+    <div class="col-xs-6 .col-sm-4">
+    </div>
+
+    <div class="col-xs-6 .col-sm-4">
+        <label for="select"> </label>
+        <select  name="select" id = "select" style=" height:31px;border-radius: 5px;">
+            <option style="color:gray" value="null"> Choisir option de recherche </option>
+
+            <option value="main">Principale -Température & Pression</option>
+            <option value="weather">Météo -  Description</option>
+            <option value="wind">Vitesse du Vent</option>
+            <option value="sys">Pays- Lever du soleil et le coucher du soleil</option>
+            <option value="coord">Coordonnées - longitude et latitude</option>
+
+        </select>
+        <input type="text" id="input" class="btn btn-default" placeholder="Pays/région..">
+        <span> </span>
+        <button type="button" id="submit" class="btn btn-danger navbar-btn"> Chercher </button>
+    </div>
+
+</div>
+
+<div id="content" class="weather-list">
+    <!--content-->
+</div>
+
+</body>
+</html>
+
+{% endblock weather %}
+
+

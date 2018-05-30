@@ -1,0 +1,46 @@
+{% extends 'basup.html.twig' %}
+{% block div %}
+    <table  width="60%"  align="center" class="table table-striped">
+
+        <tr>
+            <thead align="center">
+            <th> Numéro   </th>
+            <th> Matricule </th>
+            <th> Num Vol   </th>
+            <th> code       </th>
+            <th> Type Avion </th>
+            <th> Companie   </th>
+            <th> Date de Départ </th>
+            <th> Date d'arrive </th>
+            <th> Escale départ </th>
+            <th> Escale Arrive&nbsp; </th>
+            <th> Action </th>
+
+            </thead>
+        </tr>
+        <tr>
+            {% for c in companyEvents %}
+
+            <td> {{ c.id}} </td>
+            <td> {{ c.title }} </td>
+            <td> {{ c.NumVol }} </td>
+            <td> {{ c.code }} </td>
+            <td> {{ c.TypeAvion }} </td>
+            <td> {{ c.companie }} </td>
+            <td> {{ c.startDatetime|date('d/m/y H:m:s')}} </td>
+            <td> {{ c.endDatetime|date("d/m/y H:m:s") }} </td>
+            <td> {{ c.escaleDep }} </td>
+            <td> {{ c.escaleArrive }} </td>
+
+            <td>
+
+                <a href="{{ path('editt_ProgVol',{'id':c.id}) }}"> <i class="glyphicon glyphicon-edit"  title="Modifier"></i></a>
+                <a href="{{ path('suppp_ProgVol',{'id':c.id}) }}"><i class="glyphicon glyphicon-remove" title="Supprimer"></i></a>
+
+            </td>
+
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
+

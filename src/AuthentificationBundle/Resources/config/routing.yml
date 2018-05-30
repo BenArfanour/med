@@ -1,0 +1,59 @@
+selfuser:
+    path:    /usera
+    defaults: {_controller: AuthentificationBundle:user:self}
+
+ajout_user:
+
+    path:    /adduser
+    defaults: {_controller: AuthentificationBundle:user:new }
+
+edit_user:
+    path:    /edituser/{id}
+    defaults: {_controller: AuthentificationBundle:user:edit}
+
+supp_user:
+    path:    /deleteuser/{id}
+    defaults: {_controller: AuthentificationBundle:user:delete }
+
+show_user:
+    path:    /showuser
+    defaults: {_controller: AuthentificationBundle:user:index}
+
+
+ajout_admin:
+    path:    /addadmin
+    defaults: {_controller: AuthentificationBundle:Admin:new}
+
+show_admin:
+    path:    /showadmin
+    defaults: {_controller: AuthentificationBundle:Admin:index}
+
+
+edit_admin:
+    path:    /editadmin/{id}
+    defaults: {_controller: AuthentificationBundle:Admin:edit}
+
+
+delete_admin:
+    path:    /suppadmin/{id}
+    defaults: {_controller: AuthentificationBundle:Admin:delete}
+
+
+
+ajoutt_user:
+
+    path:    /addduser
+    defaults: {_controller: AuthentificationBundle:user:neww }
+
+editt_user:
+    path:    /edittuser/{id}
+    defaults: {_controller: AuthentificationBundle:user:editt}
+
+suppp_user:
+    path:    /deletteuser/{id}
+    defaults: {_controller: AuthentificationBundle:user:deletee }
+
+showw_user:
+    path:    /showwuser
+    defaults: {_controller: AuthentificationBundle:user:indexx}
+

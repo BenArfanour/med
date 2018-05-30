@@ -1,0 +1,14 @@
+services:
+#    authentification.example:
+#        class: AuthentificationBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
+
+parameters:
+   authentification.redirection.after_login_redirection.class: AuthentificationBundle\Controller\RedirectionLogin
+
+services:
+    after_login_redirection:
+        class:      %authentification.redirection.after_login_redirection.class%
+        arguments:  [@router, @security.authorization_checker]
+        tags:
+            - { name: 'monolog.logger', channel: 'security' }

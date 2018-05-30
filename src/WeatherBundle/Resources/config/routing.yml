@@ -1,0 +1,3 @@
+weather:
+    path:     /meto
+    defaults: { _controller: WeatherBundle:Weather:weather }

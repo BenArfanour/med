@@ -1,0 +1,30 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: x0Geek
+ * Date: 23/04/2017
+ * Time: 05:01
+ */
+
+namespace AuthentificationBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use FOS\UserBundle\Model\User as BaseUser;
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="users")
+ * @ORM\InheritanceType("JOINED")
+ * @ORM\DiscriminatorColumn(name="type", type="string")
+ * @ORM\DiscriminatorMap({"pnc" = "user", "admin" = "Admin"})
+ *
+ */
+abstract  class users extends BaseUser
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+}

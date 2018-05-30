@@ -1,0 +1,139 @@
+
+{% extends '::DhashbordPnc.html.twig' %}
+ {% block low %}
+     <style>
+         .row {
+             margin-top: 20px;
+         }.fa-lg
+          {
+              vertical-align: 0%;
+          }
+
+         .box
+         {
+             border-color: #DBDEE0;
+             border-width: 1px;
+             border-style: solid;
+             margin: 0px 0px 30px 0px;
+             float: left;
+             width: 100%;
+             font-size: 14px;
+             background-color: #FFFFFF;
+         }
+
+         .box-header
+         {
+             background-color: #F4F5F5;
+             color: #34383C;
+             overflow-x: hidden;
+             overflow-y: hidden;
+             min-height: 40px;
+             border-bottom-color: #DBDEE0;
+             border-bottom-width: 1px;
+             border-bottom-style: solid;
+             padding: 0px 0px 0px 0px;
+             margin: 0px 0px 0px 0px;
+         }
+
+         .box-header i
+         {
+             color: #CED1D4;
+             border-right-color: #DBDEE0;
+             border-right-width: 1px;
+             border-right-style: solid;
+             display: inline-block;
+             width: 40px;
+             height: 40px;
+             padding-top: 10px;
+             line-height: 20px;
+             text-align: center;
+         }
+
+         .box-title p
+         {
+             color: #7C848D;
+             display: inline-block;
+             margin: 0px 0px 0px 0px;
+         }
+
+         .box-title p+p
+         {
+             margin-left: 5px;
+         }
+
+         .box-icon i
+         {
+             border-right: none;
+             color: inherit;
+             background-color: inherit;
+         }
+         .box-icon a,
+         .box-icon a:link,
+         .box-icon a:visited
+         {
+             border-left-color: #DBDEE0;
+             border-left-width: 1px;
+             border-left-style: solid;
+             color: #7C848D;
+             text-decoration: none;
+             display: inline-block;
+             width: 40px;
+             margin-top: 0px;
+             margin-right: 0px;
+             margin-bottom: 0px;
+             margin-left: 0px;
+             padding-top: 0px;
+             padding-right: 0px;
+             padding-bottom: 0px;
+             padding-left: 0px;
+             float: left;
+             background-color: transparent;
+         }
+         .box-icon a:hover,
+         .box-icon a:focus
+         {
+             background-color: #7C848D;
+             display: inline-block;
+             text-decoration: none;
+             border-bottom-width: 0px;
+             color: #F4F5F5;
+         }
+
+         .box-content
+         {
+             color: #000000;
+             background-color: #FFFFFF;
+             padding: 10px;
+         }
+
+     </style>
+     <div class="container">
+         <div class="row">
+             <div class="col-md-12">
+                 <!--BOX-->
+                 <div class="box">
+                     <!--BOX HEADER-->
+                     <div class="box-header">
+                         <!--BOX TITLE-->
+                         <div class="box-title pull-left">
+                             <p><i class="fa fa-code fa-lg"></i></p>
+                             <p>Date :{{ low.dateDebut|date("d/m/y") }} - {{ low.dateFin|date("d/m/y") }}</p>
+                         </div>
+                     </div>
+
+                     <div class="box-content">
+                        <h1> {{ low.titre }}</h1>
+                         <h2> <font color="#6495ed">{{ low.corps }}</font></h2>
+                         <h3>Piéce jointe: <small><a href="{{ asset('uploads/news/' ~ low.pj) }}">Voir (PDF)</a></small> </h3>
+
+                     </div>
+                     <!--end: BOX CONTENT-->
+                 </div>
+                 <!--end: BOX-->
+
+             </div>
+         </div>
+     </div>
+
+
+ {% endblock %}

@@ -1,0 +1,83 @@
+weather:
+    resource: "@WeatherBundle/Resources/config/routing.yml"
+    prefix:   /
+
+rammassage_rammassage:
+    resource: "@RammassageBundle/Controller/rammassageController.php"
+    type:     annotation
+
+rammassage:
+    resource: "@RammassageBundle/Resources/config/routing.yml"
+    prefix:   /
+
+authentification_admin:
+    resource: "@AuthentificationBundle/Controller/AdminController.php"
+    type:     annotation
+
+pfe_company_events:
+    resource: "@PfeBundle/Controller/CompanyEventsController.php"
+    type:     annotation
+
+pfe:
+    resource: "@PfeBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
+lu_news:
+   path:  /lu/{idn}
+   defaults: {_controller: NewsBundle:news:lu }
+
+
+authentification_user:
+    resource: "@AuthentificationBundle/Controller/userController.php"
+    type:     annotation
+
+news_news:
+    resource: "@NewsBundle/Controller/newsController.php"
+    type:     annotation
+
+login_check:
+    path: /login_check
+
+logout:
+    path: /logout
+
+admin_login_check:
+   path: /admin/login_check
+
+
+
+authentification:
+    resource: "@AuthentificationBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
+noteservice_notesrv:
+    resource: "@NoteserviceBundle/Controller/NotesrvController.php"
+    type:     annotation
+
+noteservice:
+    resource: "@NoteserviceBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
+
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+
+news_lu:
+    path:     /lu/{id}
+    defaults: { _controller: NewsBundle:news:lu}
+    prefix:   /
+
+news:
+    resource: "@NewsBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
+fados_fullcalendar:
+    resource: "@fullCalendarBundle/Resources/config/routing.xml"
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+

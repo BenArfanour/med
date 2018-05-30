@@ -1,0 +1,47 @@
+{% extends "DhashbordPnc.html.twig" %}
+
+
+
+{% block fos_user_content %}
+    <div class="container">
+        <h2>Mon Profil</h2>
+        <div align="right">
+         <a href="{{ path('fos_user_profile_edit') }}" class="btn btn-success" >Modifer Mon Profile </a>
+        </div> <br>
+        <div class="table-responsive">
+            <table class="table">
+
+                <tbody>
+                <tr>
+                    <td> <b>Matricule</b></td> <td> <b>{{ app.user.username }}</b>  </td>
+                </tr>
+                </td>
+                <td><b>Nom </b> </td> <td>  <b>{{ app.user.nom }}</b>  </td>
+                </tr>
+                <tr>
+                    <td> <b>Prénom</b></td> <td> <b>{{ app.user.prenom }}</b> </td>
+                </tr>
+                </td>
+                <td><b>Email </b> </td> <td> <b>{{ app.user.email }}</b> </td>
+                </tr>
+                <tr>
+                    <td> <b>Adresse</b></td> <td> <b>{{ app.user.adresse}}</b> </td>
+                </tr>
+                <tr>
+                    <td><b>Date de Naissance  </b> </td> <td> <b>{{ app.user.DateNaiss|date('d/m/y')}} </b></td>
+                </tr>
+                <tr>
+                    <td><b>Type </b> </td> <td> <b>{{ app.user.type }} </b></td>
+                </tr>
+
+
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+
+{% endblock fos_user_content%}
+
+

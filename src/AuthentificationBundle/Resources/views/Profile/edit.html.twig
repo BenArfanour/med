@@ -1,0 +1,16 @@
+{% extends 'DhashbordPnc.html.twig' %}
+
+{% form_theme form 'form_div_layout.html.twig' %}
+
+{% block fos_user_content %}
+    <form action="{{ path('fos_user_profile_edit') }}" method="post">
+        <div class="container">
+            <div class="page-header">
+                <h1> Changer Votre informations </h1>
+            </div>
+                {{ form_widget(form) }}
+      <br>  <input type="submit" class="btn btn-success btn-block" value="Mettre à jour" />
+
+        </div>
+    </form>
+{% endblock fos_user_content %}

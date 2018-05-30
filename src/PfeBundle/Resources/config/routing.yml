@@ -1,0 +1,45 @@
+
+pfe:
+    path:     /abcd
+    defaults: { _controller: PfeBundle:test:test }
+
+
+Ajout_ProgVol:
+    path:     /abdprogvol
+    defaults: { _controller: PfeBundle:CompanyEvents:new }
+
+show_ProgVol:
+    path:    /showproggvol
+    defaults: {_controller: PfeBundle:CompanyEvents:index}
+
+edit_ProgVol:
+    path:    /editproggvol/{id}
+    defaults: {_controller: PfeBundle:CompanyEvents:edit}
+
+
+supp_ProgVol:
+    path:    /suppproggvol/{id}
+    defaults: {_controller: PfeBundle:CompanyEvents:edit}
+
+
+Ajoutt_ProgVol:
+    path:     /addprogvols
+    defaults: { _controller: PfeBundle:CompanyEvents:neww }
+
+showw_ProgVol:
+    path:    /showproggvoll
+    defaults: {_controller: PfeBundle:CompanyEvents:indexx}
+
+editt_ProgVol:
+    path:    /edittproggvol/{id}
+    defaults: {_controller: PfeBundle:CompanyEvents:editt}
+
+
+suppp_ProgVol:
+    path:    /suppproggvool/{id}
+    defaults: {_controller: PfeBundle:CompanyEvents:delete}
+
+
+charts:
+    path:   /chart
+    defaults: {_controller: PfeBundle:programmevol:test}
